@@ -12,3 +12,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         ls -l
+        git branch
