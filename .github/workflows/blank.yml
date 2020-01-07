@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    tags:
+      - v*
 
 jobs:
   build:
@@ -13,4 +16,4 @@ jobs:
       run: |
         ls -l
         git branch
-        echo $GITHUB_REF
+        echo $GITHUB_REF | sed "s#refs/tags/##"
