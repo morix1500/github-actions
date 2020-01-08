@@ -14,6 +14,7 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        ls -l
-        git branch
-        echo $GITHUB_REF | sed "s#refs/tags/##"
+        export VERSION=$(echo $GITHUB_REF | sed "s#refs/tags/##")
+    - name: hoge
+      run: |
+         echo ${VERSION}
