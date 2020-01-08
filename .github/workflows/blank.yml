@@ -13,7 +13,7 @@ jobs:
     - name: Run a multi-line script
       id: tag
       run: |
-        echo $GITHUB_REF | sed "s#refs/tags/##"
+        echo ::set-env name=VERSION::$(echo $GITHUB_REF | sed "s#refs/tags/##")
     - name: hoge
       run: |
-         echo ${{ steps.tag.outputs.stdout }}
+         echo $VERSION
