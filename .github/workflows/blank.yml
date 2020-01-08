@@ -16,4 +16,4 @@ jobs:
         echo $GITHUB_REF | sed "s#refs/tags/##"
     - name: hoge
       run: |
-         echo ${{ steps.tag.outputs }}
+         echo ${{ steps.tag.outputs.stdout }}
