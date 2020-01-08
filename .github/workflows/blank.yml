@@ -14,6 +14,11 @@ jobs:
       id: tag
       run: |
         echo ::set-env name=VERSION::$(echo $GITHUB_REF | sed "s#refs/tags/##")
+        echo $VERSION
     - name: hoge
       run: |
          echo $VERSION
+         touch hoge
+    - name: fuga
+      run: |
+          ls -l
