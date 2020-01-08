@@ -1,4 +1,4 @@
-name: CI
+name: hoge hoge
 
 on:
   push:
