@@ -1,24 +1,14 @@
 name: hoge hoge
 
 on:
-  push:
-    tags:
-      - v*
+  repository_dispatch:
+    types: hoge
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
-      id: tag
-      run: |
-        echo ::set-env name=VERSION::$(echo $GITHUB_REF | sed "s#refs/tags/##")
-        echo $VERSION
-    - name: hoge
-      run: |
-         echo $VERSION
-         touch hoge
     - name: fuga
       run: |
-          ls -l
+          echo hoge
